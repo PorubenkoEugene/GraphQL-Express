@@ -1,11 +1,14 @@
 const express =require ('express');
+const cors = require('cors');
+
 const { graphqlHTTP } = require('express-graphql');
 // Contacts Data
 // const { contacts } = require('./contacts');
 const schema = require('./schema/schema.js');
 
 const app = express();
-const PORT = 3000;
+app.use(cors())
+const PORT = 5000;
 
 // GraphQL-Express middleware
 app.use('/graphql', graphqlHTTP({
